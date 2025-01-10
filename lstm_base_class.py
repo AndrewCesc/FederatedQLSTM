@@ -33,7 +33,7 @@ import qiskit
 import qiskit.providers.aer.noise as noise
 
 # Custom qiskit noise model
-from ibm_noise_models import thermal_noise_backend, combined_error_noisy_backend, combined_noise_backend_normdist
+#from ibm_noise_models import thermal_noise_backend, combined_error_noisy_backend, combined_noise_backend_normdist
 
 
 # Dataset

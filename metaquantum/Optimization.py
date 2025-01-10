@@ -13,7 +13,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 import torch.multiprocessing as mp
 
-from . import Utils
+#from . import Utils
 
 import time
 
@@ -108,7 +108,7 @@ def train_epoch(opt, VQC, X, Y, batch_size, sampling_iteration):
 	for i in range(sampling_iteration):
 
 		# Test Saving
-		Utils.Saving.save_test()
+		#Utils.Saving.save_test()
 		since_batch = time.time()
 
 
@@ -177,8 +177,8 @@ def train_model(opt,
 	if not os.path.exists(exp_name):
 		os.makedirs(exp_name)
 
-	if saving_files == True:
-		Utils.Saving.save_training_and_testing(exp_name = exp_name, file_title = file_title, training_x = x_for_train, training_y = y_for_train, val_x = x_for_val, val_y = y_for_val, testing_x = x_for_test, testing_y = y_for_test)
+	#if saving_files == True:
+	#	Utils.Saving.save_training_and_testing(exp_name = exp_name, file_title = file_title, training_x = x_for_train, training_y = y_for_train, val_x = x_for_val, val_y = y_for_val, testing_x = x_for_test, testing_y = y_for_test)
 	# print(VQC.var_Q_array)
 	if show_params == True:
 		print(var_Q_circuit)
@@ -233,10 +233,10 @@ def train_model(opt,
 		cost_test_list.append(cost_test)
 
 
-		if saving_files == True:
-			Utils.Saving.save_all_the_current_info(exp_name, file_title, iter_index, var_Q_circuit, var_Q_bias, cost_train_list, cost_test_list, acc_train_list, acc_val_list, acc_test_list)
-			if torch_first_model == True:
-				Utils.Saving.saving_torch_model(exp_name, file_title, iter_index, VQC.state_dict())
+		#if saving_files == True:
+		#	Utils.Saving.save_all_the_current_info(exp_name, file_title, iter_index, var_Q_circuit, var_Q_bias, cost_train_list, cost_test_list, acc_train_list, acc_val_list, acc_test_list)
+		#	if torch_first_model == True:
+		#		Utils.Saving.saving_torch_model(exp_name, file_title, iter_index, VQC.state_dict())
 
 
 
